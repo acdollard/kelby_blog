@@ -21,6 +21,7 @@
     "astro-app"
   ],
   "devDependencies": {
+    "@astrojs/netlify": "^6.6.3",
     "concurrently": "^9.1.0"
   },
   "type": "module"
