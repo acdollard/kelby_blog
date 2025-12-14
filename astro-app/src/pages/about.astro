@@ -11,8 +11,10 @@ import kelbyImage from "../assets/images/kelby.jpeg";
       <Image
         src={kelbyImage}
         alt="Kelby"
-        width={300}
-        height={300}
+        width={320}
+        height={320}
+        quality={90}
+        format="webp"
         class="about__image"
       />
       <p>
@@ -59,7 +61,7 @@ import kelbyImage from "../assets/images/kelby.jpeg";
 
     .about__image {
       border-radius: 25%;
-      rotate: 90deg;
+      transform: rotate(90deg);
       float: left;
       margin-right: 20px;
     }
