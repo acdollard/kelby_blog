@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import kelbyImage from "../assets/images/kelby.jpeg";
+---
+
+<Layout title="About">
+  <section class="about">
+    <h1>About Kelby</h1>
+    <div class="content">
+      <Image
+        src={kelbyImage}
+        alt="Kelby"
+        width={300}
+        height={300}
+        class="about__image"
+      />
+      <p>
+        I am a Cancer Biology Ph.D. candidate at Vanderbilt University, where I
+        study how immune cells called macrophages regulate the metabolic
+        environment to promote the growth of metastasizing cancer cells and
+        limit anti-tumor immunity in the lung. Prior to starting my Ph.D., I
+        received my B.S. in Cell and Molecular Biology from the University of
+        Tennessee–Martin. Following graduation, I worked as a research assistant
+        at the University of Kentucky on two projects: characterizing a rare
+        pediatric neurodegenerative disease known as CLN3 disease in a mouse
+        model, and examining how aberrant platelet metabolism and
+        hyperactivation in diabetes contribute to thrombotic events.
+        <br />
+        <br />
+        Like many scientists, my investigative spirit began in childhood. Raised around
+        horses, I wanted to learn as much as I could about their anatomy and physiology
+        (well. . . . horses and dinosaurs). I grew up riding competitively and continued
+        through college on UTM’s equestrian team. My first real taste of the uncertain
+        but immensely rewarding process of research came during my senior year, when
+        I used molecular biology techniques to devise and execute an experimental
+        plan to disrupt a gene in the bacterium Rhodobacter capsulatus. This hands-on
+        experience revealed a facet of science I couldn’t find in a textbook, and
+        I knew it was something I wanted to pursue further.
+        <br /><br />The goal of this blog is twofold: to provide
+        trainee-friendly summaries of new cancer research and to further develop
+        my skills in reading and analyzing the literature both within and
+        outside my Ph.D. focus. In a time when we are bombarded with information
+        from all directions, I hope to offer digestible, accessible posts that
+        highlight the groundbreaking discoveries labs around the world are
+        making to help us better understand and treat cancer.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .about__image {
+      border-radius: 25%;
+      rotate: 90deg;
+      float: left;
+      margin-right: 20px;
+    }
+
+    @media screen and (max-width: 510px) {
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</Layout>
