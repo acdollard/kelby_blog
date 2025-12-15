@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import kelbyImage from "../assets/images/kelby3.jpeg";
 ---
 
@@ -8,7 +8,13 @@ import kelbyImage from "../assets/images/kelby3.jpeg";
   <section class="about">
     <h1>About Kelby</h1>
     <div class="content">
-      <Image src={kelbyImage} alt="Kelby" height={320} class="about__image" />
+      <Picture
+        src={kelbyImage}
+        alt="Kelby"
+        height={320}
+        width={320}
+        class="about__image"
+      />
       <p>
         I am a Cancer Biology Ph.D. candidate at Vanderbilt University, where I
         study how immune cells called macrophages regulate the metabolic
@@ -52,7 +58,7 @@ import kelbyImage from "../assets/images/kelby3.jpeg";
     }
 
     .about__image {
-      border-radius: 25%;
+      border-radius: 12%;
       float: left;
       margin-right: 20px;
       image-orientation: none;
