@@ -2,23 +2,14 @@
 import Card from "../components/Card.astro";
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import cells from "../assets/images/cells.jpg";
+import ssshape from "../assets/images/ssshape.svg";
+import circles from "../assets/images/circles.svg";
 import { getPosts } from "../utils/sanity";
 
 const posts = await getPosts();
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="container background">
-    <Image
-      src={cells}
-      alt="Cells"
-      height={3612}
-      width={5459}
-      class="background__image"
-    />
-  </div>
   <section>
     {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
   </section>
@@ -27,7 +18,7 @@ const posts = await getPosts();
 <style>
   .background {
     width: 100%;
-    aspect-ratio: 5459 / 3612;
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;

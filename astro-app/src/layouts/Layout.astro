@@ -2,6 +2,7 @@
 // https://docs.astro.build/en/guides/view-transitions/
 import { ViewTransitions } from "astro:transitions";
 import Nav from "../components/Nav.astro";
+import circles from "../assets/images/circles.svg";
 
 interface Props {
   title: string;
@@ -71,6 +72,10 @@ const { title } = Astro.props;
 
   main {
     margin-top: 45px;
+    background-image: url(circles.src);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .header {
