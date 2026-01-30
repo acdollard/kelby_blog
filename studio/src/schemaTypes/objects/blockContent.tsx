@@ -56,5 +56,24 @@ export default defineType({
         ],
       },
     }),
+    // Add image support to PortableText
+    defineArrayMember({
+      type: 'image',
+      options: {hotspot: true},
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for accessibility and SEO.',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+        },
+      ],
+    }),
   ],
 })

@@ -1,6 +1,6 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
+// import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './src/schemaTypes'
 
 // Environment variables for project configuration
@@ -12,7 +12,7 @@ export default defineConfig({
   title: 'Sanity Astro Starter',
   projectId,
   dataset,
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool()], // Temporarily removed visionTool() due to version compatibility
   schema: {
     types: schemaTypes,
   },
