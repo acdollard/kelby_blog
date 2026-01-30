@@ -1,6 +1,5 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-// import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './src/schemaTypes'
 
 // Environment variables for project configuration
@@ -9,10 +8,10 @@ const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 export default defineConfig({
   name: 'sanity-template-astro-clean',
-  title: 'Sanity Astro Starter',
+  title: 'Kelby\'s Korner',
   projectId,
   dataset,
-  plugins: [structureTool()], // Temporarily removed visionTool() due to version compatibility
+  plugins: [structureTool()],
   schema: {
     types: schemaTypes,
   },

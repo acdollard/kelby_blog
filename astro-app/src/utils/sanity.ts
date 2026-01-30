@@ -5,13 +5,42 @@ import groq from "groq";
 
 export async function getPosts(): Promise<Post[]> {
   return await sanityClient.fetch(
-    groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`
+    groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc){
+      _id,
+      _type,
+      _createdAt,
+      title,
+      slug,
+      excerpt,
+      mainImage{
+        ...,
+        asset->
+      }
+    }`
   );
 }
 
 export async function getPost(slug: string): Promise<Post> {
   return await sanityClient.fetch(
-    groq`*[_type == "post" && slug.current == $slug][0]`,
+    groq`*[_type == "post" && slug.current == $slug][0]{
+      _id,
+      _type,
+      _createdAt,
+      title,
+      slug,
+      excerpt,
+      mainImage{
+        ...,
+        asset->
+      },
+      body[]{
+        ...,
+        _type == "image" => {
+          ...,
+          asset->
+        }
+      }
+    }`,
     {
       slug,
     }

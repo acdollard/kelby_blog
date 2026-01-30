@@ -1,0 +1,21 @@
+---
+import { urlFor } from "../utils/image";
+
+// astro-portabletext passes the entire image node as props
+const image = Astro.props;
+const asset = image?.asset;
+const alt = image?.alt || "";
+
+// Check if asset exists before trying to build URL
+if (!asset) {
+  return null;
+}
+
+const url = urlFor(asset).url();
+const webpUrl = urlFor(asset).format("webp").url();
+---
+
+<picture>
+  <source srcset={webpUrl} type="image/webp" />
+  <img src={url} alt={alt} />
+</picture>
