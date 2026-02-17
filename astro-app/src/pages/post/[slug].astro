@@ -54,8 +54,14 @@ const post = await getPost(slug);
 
 <style>
   .post {
-    width: 100%;
-    margin: var(--space-1) 0 var(--space-4);
+    width: var(--max-width-2);
+    margin: 0 auto;
+    margin-top: var(--space-8);
+    padding: 0 var(--space-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     & .post__cover,
     & .post__cover--none {
@@ -95,11 +101,12 @@ const post = await getPost(slug);
     }
 
     & .post__title {
-      font-family: var(--font-family-sans);
+      font-family: var(--font-family-caveat);
       font-size: var(--font-size-7);
       line-height: var(--line-height-6);
       margin: var(--space-4) 0;
-      font-weight: 800;
+      font-weight: 600;
+      color: var(--color-primary);
     }
 
     & .post__excerpt {
@@ -121,10 +128,11 @@ const post = await getPost(slug);
 
   @media (min-width: 800px) {
     .post {
+      max-width: var(--max-width-1);
       & .post__cover,
       & .post__cover--none {
-        width: 750px;
-        height: 380px;
+        width: 100%;
+        height: 100%;
       }
 
       & .post__title {

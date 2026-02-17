@@ -8,24 +8,57 @@ const posts = await getPosts();
 ---
 
 <Layout title="Kelby's Korner - A Cancer Research Blog">
-  <section>
-    {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
+  <section class="home__hero">
+    <h1 class="home__hero__title">What's happening in cancer cell biology?</h1>
   </section>
+  <div class="grid-content">
+    <div class="grid-content__left">
+      <h3>Recent Articles</h3>
+    </div>
+    <section class="home__posts">
+      {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
+    </section>
+  </div>
 </Layout>
 
 <style>
-  .background {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .grid-content {
+    max-width: var(--max-width-1);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
   }
 
-  .background__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 10px 10px 0 0;
+  .grid-content__left {
+    padding: var(--space-6) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    background: var(--color-primary);
+    color: var(--white);
+  }
+
+  .home__hero {
+    width: 100vw;
+    height: 55vh;
+    border-bottom: 2px solid var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home__posts {
+    max-width: var(--max-width-1);
+    margin: var(--space-6) auto;
+  }
+
+  .home__hero__title {
+    font-size: var(--font-size-9);
+    font-weight: 400;
+    font-family: var(--font-family-caveat);
+    color: var(--color-primary);
+    width: var(--max-width-1);
+    margin-left: -4rem;
   }
 </style>
