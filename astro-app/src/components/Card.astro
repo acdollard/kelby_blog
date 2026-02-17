@@ -94,13 +94,6 @@ const { post } = Astro.props;
   }
 
   @media (min-width: 575px) {
-    .card {
-      border-bottom: none;
-
-      & .card__title {
-        margin-top: var(--space-4);
-      }
-    }
   }
 
   @media (min-width: 800px) {
@@ -108,7 +101,6 @@ const { post } = Astro.props;
       flex-direction: row;
 
       & .card__container {
-        margin: 0 var(--space-4) 0;
       }
 
       & .card__cover,

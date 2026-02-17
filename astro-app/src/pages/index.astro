@@ -9,34 +9,28 @@ const posts = await getPosts();
 
 <Layout title="Kelby's Korner - A Cancer Research Blog">
   <section class="home__hero">
-    <h1 class="home__hero__title">What's happening in cancer cell biology?</h1>
-  </section>
-  <div class="grid-content">
-    <div class="grid-content__left">
-      <h3>Recent Articles</h3>
+    <div class="max-width-wrapper">
+      <h1 class="home__hero__title">What's happening in cancer biology?</h1>
+      <p class="home__hero__subtitle">
+        I find and read the latest resarch, trying to make sense of what it
+        means and where we might be going.
+      </p>
     </div>
-    <section class="home__posts">
+  </section>
+  <section class="page__content">
+    <div class="colored-sidebar">
+      <h3 class="colored-sidebar__title">Recent Articles</h3>
+    </div>
+    <div class="posts">
       {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
-    </section>
-  </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-  .grid-content {
+  .max-width-wrapper {
     max-width: var(--max-width-1);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-
-  .grid-content__left {
-    padding: var(--space-6) var(--space-6);
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: start;
-    background: var(--color-primary);
-    color: var(--white);
+    width: var(--max-width-1);
   }
 
   .home__hero {
@@ -44,13 +38,9 @@ const posts = await getPosts();
     height: 55vh;
     border-bottom: 2px solid var(--color-primary);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  .home__posts {
-    max-width: var(--max-width-1);
-    margin: var(--space-6) auto;
   }
 
   .home__hero__title {
@@ -58,7 +48,43 @@ const posts = await getPosts();
     font-weight: 400;
     font-family: var(--font-family-caveat);
     color: var(--color-primary);
-    width: var(--max-width-1);
     margin-left: -4rem;
+  }
+  .home__hero__subtitle {
+    font-size: var(--font-size-5);
+    font-weight: 400;
+    padding-top: var(--space-2);
+    font-family: var(--font-family-sans);
+    color: var(--text-body);
+    max-width: 600px;
+    line-height: var(--line-height-6);
+  }
+
+  .page__content {
+    max-width: var(--max-width-1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 0 auto;
+  }
+
+  .colored-sidebar {
+    background: var(--color-primary);
+    color: var(--white);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+  }
+  .colored-sidebar__title {
+    font-size: var(--font-size-5);
+    font-weight: 400;
+    font-family: var(--font-family-sans);
+    color: var(--white);
+    margin: 0;
+  }
+
+  .posts {
+    padding: var(--space-6);
   }
 </style>
