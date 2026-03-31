@@ -1,0 +1,10 @@
+[build]
+  # Since this is a workspace setup, we need to build from the root
+  base = "."
+  command = "npm run build --workspace=astro-app"
+  publish = "astro-app/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# No extensions configured - if you see extension errors, check Netlify UI Settings > Extensions
