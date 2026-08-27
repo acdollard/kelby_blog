@@ -46,18 +46,20 @@ const { post } = Astro.props;
     & .card__title {
       font-family: var(--font-family-caveat);
       font-weight: 500;
-      font-size: var(--font-size-6);
-      line-height: var(--line-height-6);
+      font-size: var(--font-clamp-card-title);
+      line-height: 1.25;
       letter-spacing: -0.025em;
       margin: var(--space-3) 0;
+      overflow-wrap: break-word;
     }
 
     & .card__excerpt {
       font-family: var(--font-family-serif);
       font-weight: 400;
-      font-size: var(--font-size-4);
-      line-height: var(--line-height-3);
+      font-size: clamp(1rem, 1.5vw + 0.75rem, 1.25rem);
+      line-height: 1.45;
       margin-top: 0;
+      overflow-wrap: break-word;
     }
 
     & .card__date {
